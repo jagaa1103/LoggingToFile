@@ -23,12 +23,6 @@ class Filer: NSObject {
         return file
     }
     
-    func write(text: String) {
-        if let file = checkFile() {
-            try? text.write(to: file, atomically: false, encoding: String.Encoding.utf8)
-        }
-    }
-    
     func checkFile() -> URL? {
         if let f = file {
             return f
@@ -39,7 +33,7 @@ class Filer: NSObject {
     
     func getDate() -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyyMMdd-hh_mm_ss"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         return dateFormatter.string(from: Date())
     }
 }
