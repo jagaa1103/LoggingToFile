@@ -8,17 +8,19 @@
 
 import Foundation
 
-
-class Logger: NSObject {
-    static let instance = Logger()
+public class Logger: NSObject {
+    public static let instance = Logger()
     let filer: Filer
-    override init() {
+    
+    public override init() {
         filer = Filer()
         super.init()
     }
     
-    func write(text: String) {
+    public func write(text: String) {
         if let file = filer.checkFile() {
+            print(file)
+            print(text)
             try? text.write(to: file, atomically: false, encoding: String.Encoding.utf8)
         }
     }

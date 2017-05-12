@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import LoggingToFile
 
 class ViewController: UIViewController {
-
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +23,11 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBOutlet weak var textField: UITextField!
+    @IBAction func writeClicked(_ sender: Any) {
+        if let txt = textField.text {
+            Logger.instance.write(text: txt)
+        }
+    }
 }
 
