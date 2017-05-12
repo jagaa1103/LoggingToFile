@@ -1,0 +1,10 @@
+framework module LoggingToFile {
+  umbrella header "LoggingToFile.h"
+
+  export *
+  module * { export * }
+}
+
+module LoggingToFile.Swift {
+    header "LoggingToFile-Swift.h"
+}

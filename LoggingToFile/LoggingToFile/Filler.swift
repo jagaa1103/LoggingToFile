@@ -23,6 +23,10 @@ class Filer: NSObject {
         return file
     }
     
+//    Check folder is exist if folder is not exist create folder
+    func getFolder(){
+    }
+    
     func checkFile() -> URL? {
         if let f = file {
             return f
